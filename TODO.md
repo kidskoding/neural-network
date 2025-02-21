@@ -9,7 +9,7 @@ emphasis on backpropagation and gradient descent
 - [x] Forward Propagation
   - Compute weighted sums of inputs plus biases
   - Apply activation functions (e.g. sigmoid, ReLU)
-- [ ] Activation Functions
+- [x] Activation Functions
   - Implement common activation functions
     - **Sigmoid** for binary classification
     - **ReLU** for hidden layers
