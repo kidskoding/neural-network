@@ -6,7 +6,7 @@ emphasis on backpropagation and gradient descent
 - [x] Neurons and Layers
   - Define an **input layer**, **hidden layers**, and an **output layer**
   - Each neuron is connected to all neurons in the next layer (**fully connected**)
-- [ ] Forward Propagation
+- [x] Forward Propagation
   - Compute weighted sums of inputs plus biases
   - Apply activation functions (e.g. sigmoid, ReLU)
 - [ ] Activation Functions

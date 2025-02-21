@@ -16,7 +16,9 @@ public:
         : inputs(num_inputs), weights(num_inputs), bias(0.0), activation_function(activation) { }
 
     double weighted_sum();
+    
     static double relu(double x);
+    static double sigmoid(double x);
 };
 
 #endif //NEURON_H
