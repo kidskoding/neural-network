@@ -10,10 +10,12 @@ public:
     std::vector<double> weights;
     double bias;
     double output;
-    std::function<double(double)> activationFunction;
+    std::function<double(double)> activation_function;
 
-    Neuron(int numInputs, std::function<double(double)> activation)
-        : inputs(numInputs), weights(numInputs), activationFunction(activation) { }
+    Neuron(int num_inputs, std::function<double(double)> activation)
+        : inputs(num_inputs), weights(num_inputs), activation_function(activation) { }
+
+    double weighted_sum();
 };
 
 #endif //NEURON_H
