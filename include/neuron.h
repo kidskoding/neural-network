@@ -10,15 +10,15 @@ public:
     std::vector<double> weights;
     double bias;
     double output;
-    std::function<double(double)> activation_function;
 
-    Neuron(int num_inputs, std::function<double(double)> activation)
-        : inputs(num_inputs), weights(num_inputs), bias(0.0), activation_function(activation) { }
+    Neuron(int num_inputs)
+        : inputs(num_inputs), weights(num_inputs), bias(0.0) { }
 
     double weighted_sum();
     
     static double relu(double x);
     static double sigmoid(double x);
+    static std::vector<double> softmax(std::vector<double>& x);
 };
 
 #endif //NEURON_H

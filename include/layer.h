@@ -10,12 +10,11 @@ public:
     Layer* previousLayer;
     Layer* nextLayer;
 
-    Layer(int numNeurons, int numInputsPerNeuron,
-        std::function<double(double)> activationFn, Layer* previousLayer = nullptr) {
+    Layer(int numNeurons, int numInputsPerNeuron, Layer* previousLayer = nullptr) {
         
         this->previousLayer = previousLayer;
         for(int i = 0; i < numNeurons; i++) {
-            neurons.push_back(Neuron(numInputsPerNeuron, activationFn));
+            neurons.push_back(Neuron(numInputsPerNeuron));
         }
     }
 };
