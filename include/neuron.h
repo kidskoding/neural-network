@@ -19,6 +19,8 @@ public:
     static double relu(double x);
     static double sigmoid(double x);
     static std::vector<double> softmax(std::vector<double>& x);
+
+    static double loss(std::vector<double>& predicted, std::vector<double>& actual);
 };
 
 #endif //NEURON_H

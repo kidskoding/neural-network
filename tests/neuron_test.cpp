@@ -75,3 +75,28 @@ TEST(NeuronTest, SoftmaxFunctionWithZeros) {
         EXPECT_NEAR(result[i], expected_output[i], 1e-6);
     }
 }
+
+TEST(NeuronTest, LossFunction) {
+    std::vector<double> predicted = {1.0, 2.0, 3.0};
+    std::vector<double> actual = {1.0, 2.0, 3.0};
+    double result = Neuron::loss(predicted, actual);
+    EXPECT_DOUBLE_EQ(result, 0.0);
+}
+TEST(NeuronTest, LossFunctionWithDifferentValues) {
+    std::vector<double> predicted = {1.0, 2.0, 3.0};
+    std::vector<double> actual = {2.0, 3.0, 4.0};
+    double result = Neuron::loss(predicted, actual);
+    EXPECT_DOUBLE_EQ(result, 1.0);
+}
+TEST(NeuronTest, LossFunctionWithNegativeValues) {
+    std::vector<double> predicted = {-1.0, -2.0, -3.0};
+    std::vector<double> actual = {-1.0, -2.0, -3.0};
+    double result = Neuron::loss(predicted, actual);
+    EXPECT_DOUBLE_EQ(result, 0.0);
+}
+TEST(NeuronTest, LossFunctionWithMixedValues) {
+    std::vector<double> predicted = {1.0, -2.0, 3.0};
+    std::vector<double> actual = {-1.0, 2.0, -3.0};
+    double result = Neuron::loss(predicted, actual);
+    EXPECT_NEAR(result, 18.6667, 1e-4);
+}
