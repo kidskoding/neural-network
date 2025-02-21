@@ -25,3 +25,10 @@ TEST(NeuronTest, WeightedSumWithNegativeBiasTest) {
     double result = neuron.weighted_sum();
     EXPECT_DOUBLE_EQ(result, 1.0);
 }
+
+TEST(NeuronTest, ReLUFunction) {
+    Neuron neuron(3, Neuron::relu);
+    EXPECT_EQ(neuron.relu(-1.0), 0.0);
+    EXPECT_EQ(neuron.relu(0.0), 0.0);
+    EXPECT_EQ(neuron.relu(1.0), 1.0);
+}

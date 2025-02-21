@@ -3,7 +3,7 @@
 Focuses on intuitively understanding how neural networks work, with a strong
 emphasis on backpropagation and gradient descent
 
-- [ ] Neurons and Layers
+- [x] Neurons and Layers
   - Define an **input layer**, **hidden layers**, and an **output layer**
   - Each neuron is connected to all neurons in the next layer (**fully connected**)
 - [ ] Forward Propagation

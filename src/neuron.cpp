@@ -7,3 +7,7 @@ double Neuron::weighted_sum() {
     }
     return sum + bias;    
 }
+
+double Neuron::relu(double x) {
+    return std::max(0.0, x);
+}
