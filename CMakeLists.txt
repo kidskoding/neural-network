@@ -3,4 +3,10 @@ project(neural_network)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(neural_network src/main.cpp)
+include_directories(include)
+
+add_executable(neural_network src/main.cpp
+        src/layer.cpp
+        include/layer.h
+        src/neuron.cpp
+        include/neuron.h)

@@ -1,10 +1,7 @@
 # TODO - Neural Network
 
-Focuses on intuitively understanding 
-how neural networks work, with a strong 
-emphasis on backpropagation, gradient descent, 
-and mathematical intuition rather than advanced 
-architectures.
+Focuses on intuitively understanding how neural networks work, with a strong
+emphasis on backpropagation and gradient descent
 
 - [ ] Neurons and Layers
   - Define an **input layer**, **hidden layers**, and an **output layer**
