@@ -17,6 +17,10 @@ public:
             neurons.push_back(Neuron(numInputsPerNeuron));
         }
     }
+
+    static double loss(std::vector<double>& predicted, std::vector<double>& actual);
+    void forward_propagation();
+    void backpropagation(const std::vector<double>& actual);
 };
 
 #endif //LAYER_H

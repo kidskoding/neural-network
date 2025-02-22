@@ -12,7 +12,8 @@ set(COMMON_SOURCES
 )
 
 file(GLOB TESTS "tests/*.cpp")
-add_executable(all_tests ${TESTS} ${COMMON_SOURCES})
+add_executable(all_tests ${TESTS} ${COMMON_SOURCES}
+        tests/layer_test.cpp)
 target_link_libraries(all_tests gtest gtest_main)
 
 add_executable(neural_network 
