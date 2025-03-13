@@ -19,8 +19,8 @@ public:
     }
 
     static double loss(std::vector<double>& predicted, std::vector<double>& actual);
-    void forward_propagation();
+    void forward_propagation(const std::vector<double>& inputs);
     void backpropagation(const std::vector<double>& actual);
 };
 
-#endif //LAYER_H
+#endif
