@@ -1,6 +1,5 @@
 #include "../include/layer.h"
 
-// test
 double Layer::loss(std::vector<double>& predicted, std::vector<double>& actual) {
     double sum = 0.0;
     for(size_t i = 0; i < predicted.size(); i++) {
