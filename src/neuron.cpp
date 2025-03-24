@@ -1,4 +1,4 @@
-#include "../include/neuron.h"
+#include "neuron.h"
 #include <numeric>
 
 double Neuron::weighted_sum() {
@@ -6,7 +6,7 @@ double Neuron::weighted_sum() {
     for(int i = 0; i < inputs.size(); i++) {
         sum += inputs[i] * weights[i];
     }
-    return sum + bias;    
+    return sum + bias;
 }
 
 double Neuron::relu(double x) {
@@ -27,6 +27,6 @@ std::vector<double> Neuron::softmax(std::vector<double>& x) {
     for(size_t i = 0; i < exp_values.size(); i++) {
         exp_values[i] /= sum_exp_values;
     }
-    
+
     return exp_values;
 }

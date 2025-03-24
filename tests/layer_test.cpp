@@ -1,4 +1,4 @@
-#include <layer.h>
+#include "layer.h"
 #include <gtest/gtest.h>
 
 TEST(NeuronTest, LossFunction) {
@@ -56,18 +56,29 @@ TEST(LayerTest, Backpropagation) {
     layer.neurons[1].bias = 0.2;
 
     layer.forward_propagation(inputs);
+
+    std::vector<std::vector<double>> original_weights;
+    std::vector<double> original_biases;
+
+    for (const auto& neuron : layer.neurons) {
+        original_weights.push_back(neuron.weights);
+        original_biases.push_back(neuron.bias);
+    }
+
     layer.backpropagation(actual);
 
-    for(size_t i = 0; i < layer.neurons.size(); i++) {
+    double learning_rate = 0.01;
+
+    for (size_t i = 0; i < layer.neurons.size(); i++) {
         double error = layer.neurons[i].output - actual[i];
         double gradient = error * (layer.neurons[i].output > 0 ? 1 : 0);
 
-        for(size_t j = 0; j < layer.neurons[i].weights.size(); j++) {
-            double expected_weight = layer.neurons[i].weights[j] - 0.01 * gradient * inputs[j];
+        for (size_t j = 0; j < layer.neurons[i].weights.size(); j++) {
+            double expected_weight = original_weights[i][j] - learning_rate * gradient * inputs[j];
             EXPECT_NEAR(layer.neurons[i].weights[j], expected_weight, 1e-4);
         }
 
-        double expected_bias = layer.neurons[i].bias - 0.01 * gradient;
+        double expected_bias = original_biases[i] - learning_rate * gradient;
         EXPECT_NEAR(layer.neurons[i].bias, expected_bias, 1e-4);
     }
 }

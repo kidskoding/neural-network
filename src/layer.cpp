@@ -1,4 +1,4 @@
-#include "../include/layer.h"
+#include "layer.h"
 
 double Layer::loss(std::vector<double>& predicted, std::vector<double>& actual) {
     double sum = 0.0;

@@ -10,13 +10,13 @@ set(COMMON_SOURCES
         src/neuron.cpp
         src/layer.cpp
 )
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 file(GLOB TESTS "tests/*.cpp")
 add_executable(all_tests ${TESTS} ${COMMON_SOURCES}
         tests/layer_test.cpp)
 target_link_libraries(all_tests gtest gtest_main)
 
-add_executable(neural_network 
+add_executable(neural_network
         src/main.cpp
         ${COMMON_SOURCES}
 )
