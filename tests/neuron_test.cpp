@@ -28,8 +28,7 @@ TEST(NeuronTest, ReLUFunction) {
     EXPECT_EQ(neuron.relu(0.0), 0.0);
     EXPECT_EQ(neuron.relu(1.0), 1.0);
 }
-TEST(NeuronTest, SigmoidFunction)
-{
+TEST(NeuronTest, SigmoidFunction) {
     Neuron neuron(3);
     EXPECT_DOUBLE_EQ(neuron.sigmoid(-1.0), 1.0 / (1.0 + std::exp(1.0)));
     EXPECT_DOUBLE_EQ(neuron.sigmoid(0.0), 1.0 / (1.0 + std::exp(0.0)));

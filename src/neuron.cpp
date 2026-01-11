@@ -1,5 +1,6 @@
 #include "neuron.h"
 #include <numeric>
+#include <cmath>
 
 double Neuron::weighted_sum() {
     double sum = 0;

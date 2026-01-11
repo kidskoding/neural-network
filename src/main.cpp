@@ -1,7 +1,7 @@
 #include <iostream>
+#include <string>
 
 int main() {
-    std::string nn_str = std::string("neural network!");
-    std::cout << nn_str << '\n';
-    return 0;
+    std::string str("neural net");
+    std::cout << str << std::endl;
 }
